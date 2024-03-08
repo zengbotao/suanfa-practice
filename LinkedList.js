@@ -189,3 +189,82 @@ function reverseLinkedList(head) { //[1,2,,3]
 
   return prev;
 }
+
+
+/**
+ * @description: 相交链表判断
+ * @param {*} headA
+ * @param {*} headB
+ * @return {*}
+ */
+var getIntersectionNode = function(headA, headB) {
+    const visited = new Set(); //set可以以用来存储链表的节点以及判断
+    let temp = headA;
+    while (temp !== null) {
+        visited.add(temp);
+        temp = temp.next;
+    }
+    temp = headB;
+    while (temp !== null) {
+        if (visited.has(temp)) {
+            return temp;
+        }
+        temp = temp.next;
+    }
+    return null;
+};
+
+/**
+ * @description: 回文链表
+ * @param {*} head
+ * @return {*}
+ */
+var isPalindrome = function(head) {
+    const vals = [];
+    while (head !== null) {
+        vals.push(head.val);  //数组也可以用来保存链表对应节点的数据，从而判断是不是回文
+        head = head.next;
+    }
+    for (let i = 0, j = vals.length - 1; i < j; ++i, --j) {
+        if (vals[i] !== vals[j]) {
+            return false;
+        }
+    }
+    return true;
+};
+
+
+/**
+ * @description: 是否是循环链表？：可以在遍历的过程中加上标签，如果碰到标签，表示是循环
+ * @param {*} head
+ * @return {*}
+ */
+const hasCycle = function(head) {
+  while (head) {
+    if (head.tag) {
+      return true;
+    }
+    head.tag = true;
+    head = head.next;
+  }
+  return false;
+};
+
+/**
+ * @description: 是否是循环链表？不能修改链表
+ * @param {*} head
+ * @return {*}
+ */
+var detectCycle = function(head) {
+    const visited = new Set();
+    while (head !== null) {
+        if (visited.has(head)) {
+            return head;
+        }
+        visited.add(head);
+        head = head.next;
+    }
+    return null;
+};
+
+

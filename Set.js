@@ -60,3 +60,12 @@ for (let i of myiter) {
 }
 
 console.log([...myiter]);
+var mysetA = new Set([1, 2, 3]);
+var mysetB = new Set([2, 3, 4]);
+//并集
+// var myset = new Set([...mysetA,...mysetB])
+//交集
+// var myset = new Set([...mysetA].filter(item=>mysetB.has(item)))
+
+//差集
+var myset = new Set([...mysetB].filter((item) => !mysetA.has(item)));

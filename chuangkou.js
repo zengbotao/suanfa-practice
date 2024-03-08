@@ -21,8 +21,8 @@ var lengthOfLongestSubstring = function(s) {
     let rk = -1, ans = 0;
     for (let i = 0; i < n; ++i) {
         if (i != 0) {
-            // 左指针向右移动一格，移除一个字符
-            occ.delete(s.charAt(i - 1));
+          // 左指针向右移动一格，移除一个字符
+          occ.delete(s.charAt(i - 1)); //charCodeAt
         }
         while (rk + 1 < n && !occ.has(s.charAt(rk + 1))) {
             // 不断地移动右指针
