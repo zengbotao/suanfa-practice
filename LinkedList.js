@@ -153,23 +153,6 @@ class LinkedList {
 
 var list = new LinkedList();
 
-function reverseLink(LinkedList){
-    if(LinkedList.next===null){
-        return LinkedList
-    }else{
-        let current=LinkedList
-        let next
-        let pre
-        while(next){
-            pre.next = next;
-            current = current.next;
-
-            next=current.next
-        }
-        return pre
-    }
-    
-}
 
 /**
  * @description: 反转链表要理解核心

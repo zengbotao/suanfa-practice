@@ -1,8 +1,8 @@
 /*
  * @Author: zengbotao 2898487084@qq.com
  * @Date: 2024-03-04 18:25:40
- * @LastEditors: zengbotao 2898487084@qq.com
- * @LastEditTime: 2024-03-04 18:29:15
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2024-03-18 17:03:19
  * @FilePath: \suanfa-practice\chuangkou.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -20,6 +20,7 @@ var lengthOfLongestSubstring = function(s) {
     // 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动
     let rk = -1, ans = 0;
     for (let i = 0; i < n; ++i) {
+        console.log(i);
         if (i != 0) {
           // 左指针向右移动一格，移除一个字符
           occ.delete(s.charAt(i - 1)); //charCodeAt
@@ -35,3 +36,4 @@ var lengthOfLongestSubstring = function(s) {
     return ans;
 };
 
+lengthOfLongestSubstring('fdfdsfwefdsfsdzxcxdfdg')

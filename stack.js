@@ -1,8 +1,8 @@
 /*
  * @Author: zengbotao 2898487084@qq.com
  * @Date: 2024-02-28 19:17:58
- * @LastEditors: zengbotao 2898487084@qq.com
- * @LastEditTime: 2024-03-01 14:43:33
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2024-03-18 16:42:18
  * @FilePath: \suanfa-practice\stack.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -60,10 +60,12 @@ function convert(decNumber, base) {
   }
 
   while (!remStack.isEmpty()) {
+   
     string += baseString[remStack.pop()];
+    console.log(string);
   }
 
   return string;
 }
 
-convert(50, 16);
+convert(50, 2);

@@ -141,11 +141,14 @@ class BST {
       node.right = this.removeNode(node.right, key);
       return node;
     } else {
+
+      //末梢节点
       if (node.left == null && node.right == null) {
         node = null;
         return node;
       }
 
+      //有一个子节点
       if (node.left == null) {
         node = node.right;
         return node;
@@ -154,7 +157,7 @@ class BST {
         return node;
       }
 
-      //找到最小，
+      //找到右侧树最小的节点，
       const target = this.minNode(node.right);
       node.key = target.key;
 
